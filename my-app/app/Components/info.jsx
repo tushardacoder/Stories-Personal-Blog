@@ -1,6 +1,6 @@
 
 "use client"
-import Image from "next/image";
+
 import { useEffect, useRef ,useState} from "react";
 
 export default function Info() {
@@ -31,10 +31,10 @@ export default function Info() {
               {section.items.map((post, index) => (
                 <div key={index} className="flex gap-4 items-start">
                   <div className="w-20 h-20 relative rounded-md overflow-hidden flex-shrink-0">
-                    <Image
+                    <img
                       src={post.image}
                       alt={post.title}
-                      fill
+                      
                       className="object-cover"
                     />
                   </div>

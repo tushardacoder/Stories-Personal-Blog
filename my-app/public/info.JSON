@@ -1,0 +1,71 @@
+[
+  {
+    "category": "Destinations",
+    "items": [
+      {
+        "title": "The Best Time to Travel to Cambodia",
+        "date": "27 JAN",
+        "views": "13K VIEWS",
+        "image": "/images/cambodia-1.jpg"
+      },
+      {
+        "title": "20 Photos to Inspire You to Visit Cambodia",
+        "date": "27 AUGUST",
+        "views": "14K VIEWS",
+        "image": "/images/cambodia-2.jpg"
+      },
+      {
+        "title": "Epic Arts Cambodia: Charity for the Disabled",
+        "date": "29 AUGUST",
+        "views": "23K VIEWS",
+        "image": "/images/cambodia-3.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Lifestyle",
+    "items": [
+      {
+        "title": "10 Ways to De-Stress Your Day Hour by Hour",
+        "date": "12 AUGUST",
+        "views": "3K VIEWS",
+        "image": "/images/lifestyle-1.jpg"
+      },
+      {
+        "title": "134 Free Weekly Meal Planner Printable",
+        "date": "15 AUGUST",
+        "views": "4.1K VIEWS",
+        "image": "/images/lifestyle-2.jpg"
+      },
+      {
+        "title": "Free Printable Stickers for Your Bullet Journal",
+        "date": "16 AUGUST",
+        "views": "2.2K VIEWS",
+        "image": "/images/lifestyle-3.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Photography",
+    "items": [
+      {
+        "title": "Which TBA Preset Pack is Right For You?",
+        "date": "06 MAY",
+        "views": "23K VIEWS",
+        "image": "/images/photo-1.jpg"
+      },
+      {
+        "title": "How to Get Amazing Photos at the Pyramids of Giza",
+        "date": "05 JUN",
+        "views": "5K VIEWS",
+        "image": "/images/photo-2.jpg"
+      },
+      {
+        "title": "Beginner’s Guide to Travel Drone Photography",
+        "date": "08 AUGUST",
+        "views": "2K VIEWS",
+        "image": "/images/photo-3.jpg"
+      }
+    ]
+  }
+]

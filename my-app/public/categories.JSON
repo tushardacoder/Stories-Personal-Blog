@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Lifestyle",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "image": "https://i.postimg.cc/Ss2JP5pn/lifestyle.png"
+  },
+  {
+    "id": 2,
+    "title": "Foody",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "image": "https://i.postimg.cc/MHLfHSbv/foody.png"
+  },
+  {
+    "id": 3,
+    "title": "Entertainment",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "image": "https://i.postimg.cc/J4wBf100/Entertainment.png"
+  },
+  {
+    "id": 4,
+    "title": "Travel",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "image": "https://i.postimg.cc/7Lqhxh8Q/travel.png"
+  }
+]

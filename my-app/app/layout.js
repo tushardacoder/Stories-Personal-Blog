@@ -6,6 +6,10 @@ import Category from "./Components/category";
 import Info from "./Components/info";
 import HeroSlider from "./Components/heroslider";
 import Footer from "./Components/footer";
+import Navbar from "./Components/navbar";
+import Post from "./Components/post";
+import FeaturedPosts from "./Components/featurepost";
+import Traveltips from "./Components/traveltips";
 
 // Load fonts with static variable names
 const geistSans = Geist({
@@ -33,12 +37,17 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning // avoids hydration warnings
       >
-        <Header />
+        <Header/>
+        <div className="my-8" />
+        <Navbar/>
         <div className="my-8" />
         <HeroSlider />
+        <FeaturedPosts/>
+        <Traveltips/>
+        <Post/>
         <Info />
         <Category />
-        <Footer />
+        <Footer/>
         {children}
       </body>
     </html>

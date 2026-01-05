@@ -5,6 +5,7 @@ import { FaFacebookF, FaTwitter, FaPinterestP } from "react-icons/fa";
 import { HiMenu } from "react-icons/hi";
 import {  HiX } from "react-icons/hi";
 import { useState} from "react";
+import { FaHome } from "react-icons/fa";
 
 export default function Navbar() {
      const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Navbar() {
           {/* Left Menu */}
           <ul className="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-700">
             <li className="flex items-center gap-1 text-blue-600">
-              <span>🏠</span>
+              <span><FaHome /></span>
               <Link href="/">Home</Link>
             </li>
             <li><Link href="/travel">Travel</Link></li>

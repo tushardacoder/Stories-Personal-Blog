@@ -2,14 +2,17 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./Components/header";
-import Category from "./Components/category";
-import Info from "./Components/info";
+
+
 import HeroSlider from "./Components/heroslider";
 import Footer from "./Components/footer";
 import Navbar from "./Components/navbar";
-import Post from "./Components/post";
+
 import FeaturedPosts from "./Components/featurepost";
 import Traveltips from "./Components/traveltips";
+import Category from "./Components/category";
+import Info from "./Components/info";
+import Post from "./Components/post";
 
 // Load fonts with static variable names
 const geistSans = Geist({
@@ -43,10 +46,10 @@ export default function RootLayout({ children }) {
         <div className="my-8" />
         <HeroSlider />
         <FeaturedPosts/>
-        <Traveltips/>
-        <Post/>
-        <Info />
-        <Category />
+          <Traveltips/>
+         <Post/>
+        <Info/>
+        <Category/>
         <Footer/>
         {children}
       </body>

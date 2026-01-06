@@ -54,8 +54,7 @@ const comments = [
     name: "Kokawa",
     date: "12 Feb 2020",
     text: "Striking pewter studded epaulettes silver zips",
-    
-    avatar:"https://i.postimg.cc/sgbBRBkB/Screenshot-2026-01-04-105242.png",
+    avatar: "https://i.postimg.cc/sgbBRBkB/Screenshot-2026-01-04-105242.png",
   },
   {
     name: "Tsukasi",
@@ -66,31 +65,13 @@ const comments = [
 ];
 
 const instagram = [
-  {
-    id: 1,
-    image: "https://i.postimg.cc/GtPNbs7K/Screenshot-2026-01-04-111353.png",
-  },
-  {
-    id: 2,
-    image: "https://i.postimg.cc/bNNS0f0Y/Screenshot-2026-01-04-105600.png",
-  },
-  {
-    id: 3,
-    image: "https://i.postimg.cc/fW3RMWvL/Screenshot-2026-01-04-105637.png",
-  },
-  {
-    id: 4,
-    image: "https://i.postimg.cc/8CDSWNWM/Screenshot-2026-01-04-105701.png",
-  },
-   {
-    id: 5,
-    image: "https://i.postimg.cc/k5wkb87M/Screenshot-2026-01-04-105726.png",
-  },
-  {
-    id: 6,
-    image: "https://i.postimg.cc/SxL0m35y/Screenshot-2026-01-04-105749.png",
-  }
-]
+  { id: 1, image: "https://i.postimg.cc/GtPNbs7K/Screenshot-2026-01-04-111353.png" },
+  { id: 2, image: "https://i.postimg.cc/bNNS0f0Y/Screenshot-2026-01-04-105600.png" },
+  { id: 3, image: "https://i.postimg.cc/fW3RMWvL/Screenshot-2026-01-04-105637.png" },
+  { id: 4, image: "https://i.postimg.cc/8CDSWNWM/Screenshot-2026-01-04-105701.png" },
+  { id: 5, image: "https://i.postimg.cc/k5wkb87M/Screenshot-2026-01-04-105726.png" },
+  { id: 6, image: "https://i.postimg.cc/SxL0m35y/Screenshot-2026-01-04-105749.png" },
+];
 
 export default function Post() {
   return (
@@ -104,22 +85,44 @@ export default function Post() {
 
         <div className="space-y-10">
           {posts.map((post) => (
-            <div key={post.id} className="flex gap-6">
-              <img
-                src={post.image}
-                className="w-48 h-32 rounded-lg object-cover"
-              />
+            <div
+              key={post.id}
+              className="
+                group
+                flex gap-6
+                rounded-lg
+                p-2
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-1
+                hover:shadow-xl
+              "
+            >
+              {/* Image */}
+              <div className="overflow-hidden rounded-lg">
+                <img
+                  src={post.image}
+                  className="
+                    w-48 h-32 object-cover
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
+                  "
+                />
+              </div>
 
+              {/* Text */}
               <div>
                 <span className={`text-xs font-semibold ${post.color}`}>
                   {post.category} .
                 </span>
 
-                <h2 className="text-lg font-bold leading-snug mt-1">
+                <h2 className="text-lg font-bold leading-snug mt-1 transition-colors duration-300 group-hover:text-indigo-600">
                   {post.title}
                 </h2>
 
-                <div className="text-xs text-gray-500 mt-2 flex gap-4">
+                <div className="text-xs text-gray-500 mt-2 flex gap-4 transition-colors duration-300 group-hover:text-gray-700">
                   <span>{post.date}</span>
                   <span>{post.read}</span>
                   <span>{post.views}</span>
@@ -128,50 +131,7 @@ export default function Post() {
             </div>
           ))}
         </div>
-
-        {/* Pagination */}
-       <div className="flex items-center gap-3 mt-12">
-  {/* Left Arrow */}
-  <button className="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center hover:bg-gray-100">
-    <svg
-      className="w-4 h-4 text-gray-600"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-    </svg>
-  </button>
-
-  {/* Page Numbers */}
-  {["01", "02", "03", "04"].map((n, i) => (
-    <button
-      key={i}
-      className={`w-9 h-9 rounded-full border text-sm ${
-        i === 0
-          ? "bg-blue-600 text-white border-blue-600"
-          : "text-gray-500 hover:bg-gray-100"
-      }`}
-    >
-      {n}
-    </button>
-  ))}
-
-  {/* Right Arrow */}
-  <button className="w-9 h-9 rounded-full bg-white shadow flex items-center justify-center hover:bg-gray-100">
-    <svg
-      className="w-4 h-4 text-gray-600"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-    </svg>
-  </button>
-</div>
- </div>
+      </div>
 
       {/* RIGHT – SIDEBAR */}
       <aside className="space-y-12">
@@ -184,13 +144,30 @@ export default function Post() {
 
           <div className="space-y-6">
             {comments.map((c, i) => (
-              <div key={i} className="flex gap-4 border rounded-lg p-4">
+              <div
+                key={i}
+                className="
+                  group
+                  flex gap-4
+                  border rounded-lg
+                  p-4
+                  transition-all
+                  duration-300
+                  hover:shadow-lg
+                  hover:-translate-y-1
+                "
+              >
                 <img
                   src={c.avatar}
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="
+                    w-12 h-12 rounded-full object-cover
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
+                  "
                 />
                 <div>
-                  <p className="text-sm font-semibold">
+                  <p className="text-sm font-semibold transition-colors duration-300 group-hover:text-indigo-600">
                     {c.name}
                     <span className="text-xs text-gray-400 ml-2">
                       · {c.date}
@@ -209,17 +186,25 @@ export default function Post() {
             INSTAGRAM
           </h3>
 
-         <div className="grid grid-cols-3 gap-3">
-  {instagram.map((item) => (
-    <img
-      key={item.id}
-      src={item.image}
-      className="w-full h-24 object-cover rounded-lg"
-      alt="Instagram"
-    />
-  ))}
-</div>
-
+          <div className="grid grid-cols-3 gap-3">
+            {instagram.map((item) => (
+              <div
+                key={item.id}
+                className="overflow-hidden rounded-lg"
+              >
+                <img
+                  src={item.image}
+                  className="
+                    w-full h-24 object-cover
+                    transition-transform
+                    duration-300
+                    hover:scale-110
+                  "
+                  alt="Instagram"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
       </aside>

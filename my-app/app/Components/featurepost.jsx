@@ -1,3 +1,11 @@
+import {
+  FaShareAlt,
+  FaStar,
+  FaShoppingCart,
+  FaMusic,
+} from "react-icons/fa";
+
+/* DATA */
 const featuredData = {
   tags: ["Covid-19", "Inspiration", "Work online", "Stay home"],
 
@@ -42,6 +50,13 @@ const featuredData = {
   ],
 };
 
+/* RANDOM ICON */
+const icons = [FaStar, FaShoppingCart, FaMusic];
+const RandomIcon = () => {
+  const Icon = icons[Math.floor(Math.random() * icons.length)];
+  return <Icon />;
+};
+
 export default function FeaturedPosts() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">
@@ -54,8 +69,11 @@ export default function FeaturedPosts() {
         <div className="text-xs text-gray-400 mt-2 sm:mt-0">
           Hot tags :
           {featuredData.tags.map((tag, i) => (
-            <span key={i} className="ml-2 text-gray-600">
-              # {tag}
+            <span
+              key={i}
+              className="ml-2 text-gray-600 hover:text-blue-600 cursor-pointer transition"
+            >
+              #{tag}
             </span>
           ))}
         </div>
@@ -63,12 +81,12 @@ export default function FeaturedPosts() {
 
       {/* Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left big card */}
-        <div className="lg:col-span-2 relative rounded-xl overflow-hidden group">
+        {/* Left Big Card */}
+        <div className="lg:col-span-2 relative rounded-xl overflow-hidden group cursor-pointer">
           <img
             src={featuredData.mainPost.image}
             alt=""
-            className="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
+            className="w-full h-[420px] object-cover transition-transform duration-500 group-hover:scale-110"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -91,13 +109,26 @@ export default function FeaturedPosts() {
           </div>
         </div>
 
-        {/* Right top card */}
-        <div className="rounded-xl overflow-hidden bg-white shadow">
-          <img
-            src={featuredData.sidePost.image}
-            alt=""
-            className="w-full h-48 object-cover"
-          />
+        {/* Right Top Card */}
+        <div className="rounded-xl overflow-hidden bg-white shadow group hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
+          <div className="relative overflow-hidden">
+            <img
+              src={featuredData.sidePost.image}
+              alt=""
+              className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+            {/* Hover Icons */}
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition">
+              <div className="absolute inset-0 flex items-start justify-start text-[#D4AF37] text-3xl">
+                <RandomIcon />
+              </div>
+
+              <div className="absolute bottom-3 right-3 bg-white p-2 rounded-full text-gray-700 hover:text-blue-600 transition">
+                <FaShareAlt />
+              </div>
+            </div>
+          </div>
 
           <div className="p-5">
             <div className="flex gap-2 text-xs text-blue-500 mb-2">
@@ -106,7 +137,7 @@ export default function FeaturedPosts() {
               ))}
             </div>
 
-            <h4 className="font-semibold text-lg leading-snug">
+            <h4 className="font-semibold text-lg">
               {featuredData.sidePost.title}
             </h4>
 
@@ -116,24 +147,42 @@ export default function FeaturedPosts() {
           </div>
         </div>
 
-        {/* Bottom cards */}
+        {/* Bottom Cards */}
         {featuredData.bottomPosts.map((post, i) => (
           <div
             key={i}
-            className="rounded-xl overflow-hidden bg-white shadow"
+            className="rounded-xl overflow-hidden bg-white shadow group hover:shadow-xl hover:-translate-y-1 transition cursor-pointer"
           >
-            <img
-              src={post.image}
-              alt=""
-              className="w-full h-48 object-cover"
-            />
+            <div className="relative overflow-hidden">
+              <img
+                src={post.image}
+                alt=""
+                className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+
+              {/* Hover Icons */}
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition">
+                <div className="absolute top-3 right-3 flex gap-2 text-[#D4AF37] text-2xl">
+                  <RandomIcon />
+                </div>
+
+
+                <div className="absolute bottom-3 right-3 bg-white p-2 rounded-full text-gray-700 hover:text-blue-600 transition">
+                  <FaShareAlt />
+                </div>
+              </div>
+            </div>
 
             <div className="p-5">
-              <span className={`text-xs ${post.categoryColor}`}>
+              <span
+                className={`text-xs ${post.categoryColor} opacity-80`}
+              >
                 {post.category}
               </span>
 
-              <h4 className="mt-2 font-semibold">{post.title}</h4>
+              <h4 className="mt-2 font-semibold">
+                {post.title}
+              </h4>
 
               <p className="text-xs text-gray-400 mt-2">
                 {post.meta}

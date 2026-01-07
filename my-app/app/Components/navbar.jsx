@@ -7,7 +7,9 @@ import {
   FaTwitter,
   FaPinterestP,
   FaHome,
+
 } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
@@ -32,9 +34,50 @@ export default function Navbar() {
 
             {/* DESKTOP MENU (XL ONLY) */}
             <ul className="hidden xl:flex items-center space-x-8 text-sm font-medium text-gray-700">
-              <li className="flex items-center gap-1">
+              {/* <li className="flex items-center gap-1">
                 <FaHome />
                 <Link href="/">Home</Link>
+              </li> */}
+              <li className="relative group flex items-center gap-1 cursor-pointer">
+                <FaHome />
+
+                <Link href="/" className=" font-medium">
+                  Home
+                </Link>
+
+                <MdKeyboardArrowDown />
+
+                {/* Dropdown */}
+                <ul
+                  className="absolute top-full left-0 mt-2 w-40 bg-white border rounded-md shadow-lg
+                         opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                         transition-all duration-200 z-50"
+                >
+                  <li>
+                    <Link
+                      href="/"
+                      className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
+                    >
+                      Home default
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/home-2"
+                      className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
+                    >
+                      Homepage 2
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/home-3"
+                      className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
+                    >
+                      Homepage 3
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li><Link href="/travel">Travel</Link></li>
               <li className="flex items-center gap-2">
@@ -101,9 +144,46 @@ export default function Navbar() {
         </div>
 
         <ul className="p-6 space-y-4 text-sm font-medium">
-          <li><Link href="/">Home</Link></li>
+         <li><Link href="/">Home <MdKeyboardArrowDown /></Link>
+          <ul
+                  className="absolute top-full left-0 mt-2 w-40 bg-white border rounded-md shadow-lg
+                         opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                         transition-all duration-200 z-50"
+                >
+                  <li>
+                    <Link
+                      href="/"
+                      className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
+                    >
+                      Home default
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/home-2"
+                      className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
+                    >
+                      Homepage 2
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/home-3"
+                      className="block px-4 py-2 text-gray-600 hover:bg-gray-100"
+                    >
+                      Homepage 3
+                    </Link>
+                  </li>
+                </ul>
+
+            
+          
+          </li>
           <li><Link href="/travel">Travel</Link></li>
-          <li><Link href="/mega-menu">Mega Menu</Link></li>
+           <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
+                <Link href="/mega-menu">Mega Menu</Link>
+              </li>
           <li><Link href="/guides">Guides</Link></li>
           <li><Link href="/food">Food</Link></li>
           <li><Link href="/hotels">Hotels</Link></li>
@@ -133,7 +213,7 @@ export default function Navbar() {
             {/* HOT TOPICS */}
             <section>
               <h4 className="text-xs font-semibold tracking-widest mb-4">
-              HOT TOPICS
+                HOT TOPICS
               </h4>
               <ul className="space-y-3 text-sm">
                 {[

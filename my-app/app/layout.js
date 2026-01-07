@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "./Components/header";
 
 
-import HeroSlider from "./Components/heroslider";
+
 import Footer from "./Components/footer";
 import Navbar from "./Components/navbar";
 
@@ -13,6 +13,7 @@ import Traveltips from "./Components/traveltips";
 import Category from "./Components/category";
 import Info from "./Components/info";
 import Post from "./Components/post";
+import HeroSlider from "./Components/heroslider";
 
 // Load fonts with static variable names
 const geistSans = Geist({
@@ -44,7 +45,7 @@ export default function RootLayout({ children }) {
         <div className="my-8" />
         <Navbar/>
         <div className="my-8" />
-        <HeroSlider />
+        <HeroSlider/>
         <FeaturedPosts/>
           <Traveltips/>
          <Post/>

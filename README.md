@@ -17,9 +17,9 @@ This project is built as a **personal blogging platform** to practice web develo
 
 ## Tech Stack
 - HTML  
-- CSS  
+- Tailwind CSS 
 - JavaScript  
-- (Optional: React / Next.js / Tailwind CSS)
+- Next.js  
 
 ---
 
